@@ -1,8 +1,8 @@
 <template>
-<!--  目前项目使用封装轮播图的组件，遍历了数据的图片和内容   -->
+    <!--  目前项目使用封装轮播图的组件，遍历了数据的图片和内容   -->
     <Swiper>
         <slide v-for="item in banner">
-            <a :href="item.link"> <img :src="item.image"></a>
+            <a :href="item.link"> <img :src="item.image" @load="imageLoad" alt=""></a>
         </slide>
     </Swiper>
 </template>
@@ -13,10 +13,15 @@
 
   export default {
     name: "HomeSwiper",
+    data() {
+      return {
+        isLoad: false
+      }
+    },
     props: {
       banner: {
         type: Array,
-        default(){
+        default() {
           return []
         }
       }
@@ -24,6 +29,14 @@
     components: {
       Slide,
       Swiper,
+    },
+    methods: {
+      imageLoad() {
+        if (!this.isLoad) {
+          this.$emit('swiperImageLoad')
+          this.isLoad = true
+        }
+      }
     }
   }
 </script>

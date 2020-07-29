@@ -1,6 +1,6 @@
 <template>
 <!--  目前项目使用封装好的底部导航栏组件  -->
-    <tabber  class="a">
+    <tabber>
         <TabBarItem path="/home" active-color="red"><img slot='item-icon' :src="imgHome" alt="">
             <img slot='item-iconActive' :src="imgHomeActive" alt="">
             <div slot="item-name">首页</div>
@@ -46,7 +46,5 @@
 </script>
 
 <style scoped>
-    .a{
-        z-index: 9;
-    }
+
 </style>

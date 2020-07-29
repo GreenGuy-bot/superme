@@ -35,10 +35,10 @@
     },
     computed: {
       isActive() {
-        return this.$route.path.indexOf(this.path) !== -1
+        return this.$route.path.indexOf(this.path) !== -1 //活跃路径没找到为-1 找到不为-1也就是！==-1
       },
       activeStyle(){
-        return this.isActive?{color:this.activeColor}:{}
+        return this.isActive?{color:this.activeColor}:{}  //如果isActive为turn则调用color:this.activeColor否则调用{}
       }
     }
   }

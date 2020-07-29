@@ -1,6 +1,8 @@
 <template>
+<!--  二级导航栏，点击变红，并把点击对象传到外部home  -->
     <div class="tabControl">
-        <div v-for="(item,index) in title" @click="red(index)" class="tab-control-item" :class="{ActiveRed:currentIndex === index}">
+        <div v-for="(item,index) in title" @click="active(index)" class="tab-control-item"
+             :class="{ActiveRed:currentIndex === index}">
             <span>{{item}}</span>
         </div>
     </div>
@@ -15,7 +17,8 @@
       }
     },
     methods:{
-      red(index){
+      active(index){
+        this.$emit('tabClick',index) //将被点击的index传出去
         this.currentIndex = index
       }
     },
