@@ -1,5 +1,5 @@
 <template>
-    <h2>我的</h2>
+    <h2>欢迎您：{{$store.state.name}}大人！！！！！</h2>
 </template>
 
 <script>

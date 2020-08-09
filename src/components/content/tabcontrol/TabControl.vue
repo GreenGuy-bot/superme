@@ -44,12 +44,12 @@
         height: 40px;
         line-height: 40px;
         font-size: 15px;
-        margin-left: 5px;
-        margin-right: 5px;
+        margin-left: 25px;
+        margin-right: 25px;
     }
     .ActiveRed{
         color:var(--color-high-text);
-        border-bottom: var(--color-high-text) solid 3px;
+        border-bottom: var(--color-high-text) solid 3px ;
         padding-bottom: 5px;
     }
 

@@ -1,7 +1,9 @@
 <template>
     <!--  详情页   -->
     <div id="detail">
+        <!--    顶部导航栏    -->
         <detail-nav-bar class="detailNavBar" @titleIndex="titleIndex"></detail-nav-bar>
+        <!--    以下是可滚动区域+有关商品各种信息    -->
         <Scroll class="content" ref="Scroll" :pull-up-load='true' :probe-type="3"
                 @scroll="scrollPosition" @pullingUp="loadMore">
             <detail-swiper :top-images="topImages"></detail-swiper> <!-- 父子组件传值要用驼峰 -->
@@ -12,8 +14,10 @@
             <detail-comment ref="comment" :comment-info="commentInfo"></detail-comment>
             <goods-lists ref="recommend" :goods="recommends"></goods-lists>
         </Scroll>
+        <!--    回到顶部按钮,使用了混入对象   -->
         <back-top @click.native="topClick" v-show="ifShow"></back-top>
-        <detail-bottom-bar></detail-bottom-bar>
+        <!--   底部功能栏，点击加入购物车     -->
+        <detail-bottom-bar @clickDart="clickDart"></detail-bottom-bar>
     </div>
 </template>
 
@@ -78,10 +82,22 @@
             this.currentIndex = i
             // console.log(this.currentIndex)
           }
-        }
-        //回到顶部
+        }//回到顶部
         this.listenShowBackTop(position) //传入位置参数给混入对象
       },
+      clickDart() {
+        //储存商品信息并发给action中的addCart
+        const product = {
+          iid: this.iid,
+          desc: this.goods.desc,
+          price: this.goods.realPrice,
+          title: this.goods.title,
+          img: this.topImages[0]
+        }
+        this.$store.dispatch('addCart', product).then(res=>{//弹窗回调函数
+          this.$toast.show(res,1500)//res=回调的resolve函数，使用则等于输出resolve函数
+        })
+      }
 
     },
     created() {

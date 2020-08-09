@@ -31,7 +31,7 @@
 
   export default {
     name: "Home",
-    mixins:[backTopMix],//混入对象，复用backTop属性和方法
+    mixins: [backTopMix],//混入对象，复用backTop属性和方法
     components: {
       Scroll,
       GoodsLists,
@@ -53,6 +53,7 @@
         },
         ifTabShow: false,
         tabOffsetTop: 0,
+        saveY: 0
       }
     },
     created() {
@@ -128,6 +129,14 @@
         this.ifTabShow = (-position.y) > this.tabOffsetTop
       },
 
+
+    },
+    activated() {
+      this.$refs.Scroll.scroll.refresh()
+      this.$refs.Scroll.scroll.scrollTo(0, this.saveY)
+    },
+    deactivated() {
+      this.saveY = this.$refs.Scroll.scroll.y
 
     },
     computed: {
