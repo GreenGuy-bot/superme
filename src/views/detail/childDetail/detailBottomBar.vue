@@ -84,11 +84,11 @@
     }
     .cart {
         background-color: rgb(255, 174, 0);
-        padding-top:7px;
+        padding-top:2.1vh;
     }
     .buy {
         background-color:#42b983;
         color: white;
-        padding-top: 6px;
+        padding-top: 2vh;
     }
 </style>

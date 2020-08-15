@@ -41,9 +41,9 @@
     }
   }
 </script>
-
+<!--  不能直接Import导入css,因为直接导入的CSS是全局的   -->
+<style scoped  src="../../../assets/css/login.css" ></style>
 <style scoped>
-    @import "../../../assets/css/login.css";
     .formSecond {
         width: 80%;
         padding-top: 3rem;

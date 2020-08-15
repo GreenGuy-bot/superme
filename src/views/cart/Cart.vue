@@ -2,10 +2,11 @@
 <!--  购物车页   -->
     <div class="cart">
         <nav-bar class="navBar">
-            <slot slot="center">购物车({{cartLength}})</slot>
+            <div slot="center">购物车({{cartLength}})</div>
+            <div slot="right" >管理</div>
         </nav-bar>
         <scroll class="content" ref="Scroll">
-            <div v-show="isEmptyShow" class="empty"><h3>这里空空如也~</h3></div>
+            <div v-show="isEmptyShow" class="empty"></div>
             <cart-list >
             </cart-list>
         </scroll>
@@ -24,14 +25,15 @@
     computed:{
       cartLength(){
         return this.$store.state.cartList.length
+
       },
       isEmptyShow(){
         return this.$store.state.cartList.length===0
       }
     },
-    // activated() {
-    //   this.$refs.Scroll.scroll.refresh()
-    // }
+    activated() {
+      this.$refs.Scroll.scroll.refresh()
+    }
   }
 </script>
 
@@ -40,16 +42,21 @@
         height: 100vh;
     }
    .navBar{
-       background-color: var(--color-tint);
-       color:#fff;
+       background-image: linear-gradient(to right, #ff9569 0%, #e92758 100%);
+       font-size: 1.5rem;
+       color: #f6f6f6;
    }
     .content{
         height: calc(100% - 93px - 40px);
         overflow: hidden;
     }
     .empty{
-        text-align: center;
-        padding-top: 15px;
-        height: 40px;
+        margin-top:17vh;
+        margin-left: 6.2vw;
+        height: 50vh;
+        width: 90vw;
+        background: url("../../assets/img/empty/NoGoods.jpg");
+        background-size: 100% 100%;
+
     }
 </style>

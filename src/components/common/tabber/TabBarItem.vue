@@ -50,6 +50,9 @@
         text-align: center; /*块级元素内的位置居中*/
         height: 49px; /*大部分app功能块高度都是49px*/
         font-size: 14px;
+        font-family: "Adobe 宋体 Std L",serif;
+        font-weight: bold;
+        color:#8a8a8a;
     }
 
     .tab-item img {

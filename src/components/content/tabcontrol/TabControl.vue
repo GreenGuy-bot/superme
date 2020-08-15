@@ -44,8 +44,8 @@
         height: 40px;
         line-height: 40px;
         font-size: 15px;
-        margin-left: 25px;
-        margin-right: 25px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
     .ActiveRed{
         color:var(--color-high-text);

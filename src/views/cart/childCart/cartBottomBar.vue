@@ -49,13 +49,18 @@
           this.$toast.show('请选择您要购买的商品',1500)
         }
       }
+    },
+    filters:{
+      // showPrice(Price){
+      //   return parseFloat(Price).toFixed(2)
+      // }
     }
   }
 </script>
 
 <style scoped>
    .cartBottomBar{
-       background-color: #cccccc;
+       background-color: #eeeeee;
        position: relative;
        bottom: 0;
        height: 40px;
@@ -69,20 +74,25 @@
         margin-top: 8px;
         font-family: "Adobe 楷体 Std R",serif;
         font-weight: bold;
+        font-size: 1.5rem;
     }
     .totalPrice{
         margin-top: 8px;
-        margin-left: 10px;
+        margin-left:29vw;
+        font-size: 1.5rem;
+        color: #eb4868;
     }
     .calculate{
         color:#fff;
         height: 40px;
+        border-radius: 20px;
         position: absolute;
         padding-right: 15px;
         padding-left: 15px;
-        right: 0;
+        right: 3vw;
         top:0;
         line-height:2.5;
-        background-color:#f13e3a;
+        background-image: linear-gradient(to right, #eb4868 , #fe928f);/*渐变色*/
+        font-size: 1.5rem;
     }
 </style>

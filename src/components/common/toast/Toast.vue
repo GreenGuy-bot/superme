@@ -39,5 +39,6 @@
         padding: 8px 10px;
         background-color: rgba(0, 0, 0, .6);
         z-index: 22;
+        font-size: 4.5vw;
     }
 </style>

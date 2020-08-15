@@ -1,31 +1,25 @@
 <template>
 <!--  封装好的底部导航栏框架组件   -->
-    <div id="tab-bar">
+    <div id="tabBar">
        <slot></slot>
     </div>
 </template>
 
 <script>
   export default {
-    name: "tabber",
-    data() {
-      return {
-
-      }
-    },
+    name: "tabber"
   }
 </script>
 
 <style scoped>
-
-    #tab-bar {
+    #tabBar {
         display: flex;
         background: #f6f6f6;
         position: fixed;
         left: 0;
         right: 0;
         bottom: 0;
-        box-shadow: 0px -1px 10px rgba(100, 100, 100, 0.32);
+        box-shadow: 0 -1px 10px rgba(100, 100, 100, 0.32);
     }
 
 </style>

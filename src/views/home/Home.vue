@@ -2,7 +2,7 @@
     <!--  首页  -->
     <div id="home">
         <NavBar class="NavBar">
-            <div slot="center">购物车</div>
+            <div slot="center">与天商城</div>
         </NavBar>
         <TabControl class="tab-control" :title="['流行','新款','精选']"
                     ref="tabControlNew" @tabClick="onTabClick" v-show="ifTabShow"></TabControl>
@@ -167,15 +167,27 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+    $baseWidth: 750;
+    $baseHeight: 1334;
+
+    @function toScaX($px) {
+    @return $px*100/$baseWidth *1vw;
+    }
+
+    @function toScaY($px) {
+    @return $px*100/$baseHeight *1vh;
+    }
+
     #home {
         position: relative;
         height: 100vh; /*可视窗口百分百*/
     }
 
     .NavBar {
-        background-color: var(--color-tint);
+        background-image: linear-gradient(to right, #ff9569 0%, #e92758 100%);
         color: #fff;
+        font-size: 1.5rem;
         /*由于使用scroll框架，所以不再需要脱离标准流将其固定*/
         /*position: fixed;*/
         /*left: 0;*/
