@@ -1,4 +1,5 @@
 <template>
+    <!--  订单的单独页面  -->
     <div>
         <nav-bar class="navBar">
             <div slot="center" class="center">我的订单</div>

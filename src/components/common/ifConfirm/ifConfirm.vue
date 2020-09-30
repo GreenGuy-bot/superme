@@ -1,4 +1,5 @@
 <template>
+    <!--  封装好的判断弹窗组件  -->
     <div class="mack" v-if="isShow">
         <div class="mackWeb" :style="text.mackStyle">
             <div class="title font_b" v-if="text.title" :style="text.titleStyle">{{text.title.trim()}}</div>
@@ -10,13 +11,15 @@
                         @click="cancel"
                         v-if="text.cancel"
                         :style="text.cancelValStyle"
-                >{{text.btn.cancelVal}}</div>
+                >{{text.btn.cancelVal}}
+                </div>
                 <div
                         class="foot_r borderTop"
                         @click="confirm"
                         v-if="text.confirm"
                         :style="text.confirmValStyle"
-                >{{text.btn.confirmVal}}</div>
+                >{{text.btn.confirmVal}}
+                </div>
             </div>
         </div>
     </div>
@@ -24,7 +27,7 @@
 
 <script>
   export default {
-    name:'ifConfirm',
+    name: 'ifConfirm',
     data() {
       return {
         isShow: true,
@@ -36,10 +39,10 @@
           confirm: true,
           mackStyle: null,
           titleStyle: null,
-          mesgStyle:null,
+          mesgStyle: null,
           cancelValStyle: null,
           confirmValStyle: null,
-          Ok:false,
+          Ok: false,
           btn: {
             confirmVal: "确定",
             cancelVal: "取消"
@@ -68,22 +71,26 @@
         top: 0;
         left: 0;
         background: rgba(21, 21, 21, 0.7);
+
         .font_b {
             font-size: 4vw;
             margin-top: 3vh;
             color: #231a2f;
         }
+
         .font_s {
-            font-size:4vw;
+            font-size: 4vw;
             margin-top: 4.3vh;
             color: #655a72;
         }
+
         .borderTop {
             border-top: 1/50rem solid #e4e4e4;
         }
+
         .mackWeb {
             background: #ffffff;
-            width:40vw;
+            width: 40vw;
             height: 15vh;
             min-width: 300/50rem;
             margin: auto;
@@ -91,22 +98,27 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
             .title {
                 text-align: center;
                 padding: 15/50rem 15/50rem 0 15/50rem;
             }
+
             .mesg {
                 padding: 15/50rem;
                 font-size: 4.5vw;
                 text-align: center;
                 margin-top: 3vh;
             }
+
             .footb {
                 display: inline-table;
                 width: 100%;
+
                 .borderlf {
                     border-right: 1/50rem solid #e4e4e4;
                 }
+
                 div {
                     display: table-cell;
                     box-sizing: border-box;

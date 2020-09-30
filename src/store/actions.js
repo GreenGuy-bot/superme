@@ -7,21 +7,21 @@ export default {
     //     oldProduct = item //将重复的赋值给oldProduct
     //   }
     // }
-   return new Promise((resolve,reject)=>{
-     let oldProduct =context.state.cartList.find(item => //item是遍历后里面找到的对象
-       item.iid === payLord.iid //只有一行可以省略大括号和return，是给oldProduct返回一个重复值
-     )
-     if (oldProduct) {
-       context.commit('addCount',oldProduct)
-       //如果oldProduct为true,则为重复，将count+1 表示多买一个
-       resolve('当前商品数量+1')
-     } else {
-       payLord.count=1
-       context.commit('addToCart',payLord)
-       resolve('添加了新的商品')
-       //没重复的count默认为1
-     }
-   })
+    return new Promise((resolve, reject) => {
+      let oldProduct = context.state.cartList.find(item => //item是遍历后里面找到的对象
+        item.iid === payLord.iid //只有一行可以省略大括号和return，是给oldProduct返回一个重复值
+      )
+      if (oldProduct) {
+        context.commit('addCount', oldProduct)
+        //如果oldProduct为true,则为重复，将count+1 表示多买一个
+        resolve('当前商品数量+1')
+      } else {
+        payLord.count = 1
+        context.commit('addToCart', payLord)
+        resolve('添加了新的商品')
+        //没重复的count默认为1
+      }
+    })
 
   }
 }

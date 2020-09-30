@@ -2,7 +2,7 @@
     <!--  商品列表内部组件，获取父组件数据并展示  -->
     <div class="goodsItemList" @click="itemClick">
         <!--   @load="imageLoad" 监听图片加载     -->
-        <img :src="showImage">
+        <img :src="showImage" alt="">
         <div class="goodsInfo">
             <p>{{goodsItem.title}}</p>
             <span class="price">{{'¥'+goodsItem.price}}</span>

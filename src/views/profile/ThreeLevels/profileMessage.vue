@@ -1,4 +1,5 @@
 <template>
+    <!-- 消息页   -->
     <div>
         <nav-bar>
             <div slot="center" class="center">我的消息</div>
@@ -12,10 +13,11 @@
 
 <script>
   import NavBar from "../../../components/common/navTab/NavBar";
+
   export default {
     name: "profileMessage",
     components: {NavBar},
-    methods:{
+    methods: {
       backClick() {
         this.$router.back()
       }
@@ -24,16 +26,18 @@
 </script>
 
 <style scoped>
-    .center{
+    .center {
         font-size: 4.2vw;
         font-weight: bold;
 
     }
+
     .imgLeft {
         width: 8.5vw;
         margin-top: 7px;
     }
-    .empty{
+
+    .empty {
         background: url("../../../assets/img/empty/NoMessage.jpg");
         background-size: 100% 100%;
         width: 70vw;

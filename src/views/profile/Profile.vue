@@ -1,4 +1,5 @@
 <template>
+<!--  个人页面   -->
     <div class="profile">
         <profile-nav-bar @isSideChange="isSideChange"></profile-nav-bar>
         <profile-side-bar v-show="isShowSide"></profile-side-bar>

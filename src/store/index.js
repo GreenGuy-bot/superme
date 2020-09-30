@@ -8,7 +8,8 @@ export default new Vuex.Store({
   state: {
     cartList: [],
     name:'',
-    ok:false
+    ok:false,
+    goodsList:[]
   },
   mutations,
   actions,

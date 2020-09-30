@@ -1,4 +1,5 @@
 <template>
+    <!-- 地址页   -->
     <div>
         <nav-bar class="navBar">
             <div slot="center" class="center">我的地址</div>
@@ -32,11 +33,13 @@
     .navBar {
         font-weight: bold;
     }
+
     .imgLeft {
         width: 8.5vw;
         margin-top: 7px;
     }
-     .empty {
+
+    .empty {
         margin-top: 5vh;
         height: 55vh;
         width: 90vw;
@@ -44,7 +47,8 @@
         background-size: 100% 100%;
         margin-left: 4.5vw;
     }
-    .right{
+
+    .right {
         margin-top: 0.1vh;
         color: #666666;
         width: 30vw;

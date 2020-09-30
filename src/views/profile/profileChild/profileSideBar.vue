@@ -1,4 +1,5 @@
 <template>
+    <!--  个人界面的侧边弹出导航栏  -->
     <transition name="myActive">
         <div class="navBar">
             <hl-menu>
@@ -17,17 +18,18 @@
   import HlMenu from "../../../components/common/sideBar/hlMenu";
   import ReSub from "../../../components/common/sideBar/reSub";
   import HlMenuItem from "../../../components/common/sideBar/hlMenuItem";
+
   export default {
     name: "profileSideBar",
     components: {HlMenuItem, ReSub, HlMenu},
-    data(){
-      return{
+    data() {
+      return {
         sideNavBarData: [
           {
             title: '我的评价',
             path: '/profileComment',
             activeName: 'active',
-            icon:'left'
+            icon: 'left'
           },
           {
             title: '系统设置',
@@ -58,17 +60,23 @@
             path: '',
             activeName: 'active',
             icon: 'el-icon-upload',
-            children:[
+            children: [
               {
-                title:'当前版本 2.3.1',
-                path:''
+                title: '当前版本 2.3.1',
+                path: ''
               },
               {
-                title:'更新到最新版本',
-                path:''
+                title: '更新到最新版本',
+                path: ''
               }
             ]
           },
+          {
+            title: '退出登录',
+            path: '/login',
+            activeName: 'active',
+            icon: 'el-icon-upload'
+          }
         ]
       }
     }
@@ -76,31 +84,37 @@
 </script>
 
 <style scoped>
-    .myActive-enter-active,.myActive-leave-active{
+    .myActive-enter-active, .myActive-leave-active {
         transition: opacity .1s
     }
+
     .myActive-enter, .myActive-leave-to {
         opacity: .1
     }
+
     .myActive-leave, .myActive-enter-to {
         opacity: 1
     }
 
-    .left{
+    .left {
         width: 100px;
         height: 100px;
         background-color: #666666;
     }
-    .myActive-enter{
-        transform:translateY(-100%);
+
+    .myActive-enter {
+        transform: translateY(-100%);
     }
-    .myActive-leave-avtive{
-        transform:translateY(100%);
+
+    .myActive-leave-avtive {
+        transform: translateY(100%);
     }
-    .myActive-enter-active{
-        transition:all 1s ease-out;
+
+    .myActive-enter-active {
+        transition: all 1s ease-out;
     }
-    .myActive-leave-active{
-        transition:all .85s ease-out;
+
+    .myActive-leave-active {
+        transition: all .85s ease-out;
     }
 </style>

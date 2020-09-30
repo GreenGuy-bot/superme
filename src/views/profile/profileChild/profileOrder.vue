@@ -1,20 +1,21 @@
 <template>
+<!--  个人订单部分 -->
     <div>
         <div class="order" @click="order"></div>
         <item class="item">
-            <item-list @click.native="order">
+            <item-list @click.native="order" number="1">
                 <img slot='item-icon' :src="imgPay" alt="">
                 <div slot="item-name">待付款</div>
             </item-list>
-            <item-list @click.native="order">
+            <item-list @click.native="order" number="2">
                 <img slot='item-icon' :src="imgDeliver" alt="">
                 <div slot="item-name">待发货</div>
             </item-list>
-            <item-list @click.native="order">
+            <item-list @click.native="order" number="3">
                 <img slot='item-icon' :src="imgReceive" alt="">
                 <div slot="item-name">待收货</div>
             </item-list>
-            <item-list @click.native="order">
+            <item-list @click.native="order" number="4">
                 <img slot='item-icon' :src="imgRefund" alt="">
                 <div slot="item-name">退款</div>
             </item-list>
@@ -37,7 +38,7 @@
       }
     },
     methods:{
-         order(){
+         order(number){
            this.$router.push('profileAllOrder')
          }
     }

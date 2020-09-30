@@ -17,6 +17,8 @@ const profileSetting =()=>import('../views/profile/profileSideBar/profileSetting
 const feedBack =()=>import('../views/profile/profileSideBar/feedBack.vue')
 const myMembers=()=>import('../views/profile/profileSideBar/myMembers.vue')
 const history =()=>import('../views/profile/profileSideBar/history.vue')
+const profileWallet =()=>import('../views/profile/ThreeLevels/profileWallet.vue')
+const SearchResult =()=>import('../views/category/CategoryChild/SearchResult')
   const routes = [
     {
       path:'',
@@ -33,6 +35,10 @@ const history =()=>import('../views/profile/profileSideBar/history.vue')
     {
       path:'/category',
       component:Category
+    },
+    {
+      path:'/SearchResult',
+      component:SearchResult
     },
     {
       path:'/cart',
@@ -80,6 +86,10 @@ const history =()=>import('../views/profile/profileSideBar/history.vue')
     {
       path:'/history',
       component:history
+    },
+    {
+      path:'/profileWallet',
+      component:profileWallet
     }
 
 ]

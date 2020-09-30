@@ -1,12 +1,13 @@
 <template>
+    <!--  搜索框封装  -->
     <div>
         <nav-bar class="navBar">
             <div slot="center">
                 <label>
                     <img src="../../../assets/img/common/search.svg" alt="" class="searchIcon">
                     <input type="text" class="search" v-model="search">
-                    <img v-if="ifTakePhoto" src="../../../assets/img/common/photo.svg" alt="" class="takePhoto" >
-                    <img v-else @click="deleteSearch" src="../../../assets/img/common/delete.svg" alt="" class="delete" >
+                    <img v-if="ifTakePhoto" src="../../../assets/img/common/photo.svg" alt="" class="takePhoto">
+                    <img v-else @click="deleteSearch" src="../../../assets/img/common/delete.svg" alt="" class="delete">
                 </label>
             </div>
             <div slot="left" class="scan"></div>
@@ -26,9 +27,9 @@
         search: ''
       }
     },
-    methods:{
-      deleteSearch(){
-         this.search=''
+    methods: {
+      deleteSearch() {
+        this.search = ''
       }
     },
     computed: {
@@ -50,7 +51,7 @@
         border: 0;
         width: 70vw;
         height: 4.5vh;
-        margin-top:3.5vh;
+        margin-top: 3.5vh;
         float: left;
         background-color: #f7f7f7;
         padding-left: 8vw;
@@ -85,7 +86,8 @@
         width: 6vw;
         background-size: 100%
     }
-    .delete{
+
+    .delete {
         position: relative;
         float: right;
         margin-top: 4.1vh;
@@ -94,7 +96,8 @@
         width: 6vw;
         background-size: 100%
     }
-    .right{
+
+    .right {
         background: url("../../../assets/img/category/hot.svg");
         background-size: 100% 100%;
         width: 7vw;

@@ -54,7 +54,7 @@
             // for(let i of this.$store.state.cartList){
             //   if(i.id===this.id){ }
             // }如果只知道ID的话需要遍历找到元素将其删除
-                this.$store.state.cartList.splice(this.item, 1)//删除该元素
+                this.$store.state.cartList.splice(this.item, 1)//删除该元素,resolve()回调执行的
           }).catch(() => {
             console.log("no");
           });

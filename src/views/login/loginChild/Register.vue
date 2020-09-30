@@ -1,4 +1,5 @@
 <template>
+    <!--  登录功能的注册页  -->
     <div v-else class="formSecond">
         <label class="name">
             <input type="text" v-model="name" class="text" placeholder="请输入您的用户名">
@@ -20,18 +21,19 @@
 
 <script>
   import {login} from '../../../commonjs/mixin'
+
   document.getElementsByTagName("html")[0].style.fontSize = Math.floor(document.documentElement.clientWidth * 100000 / 36) / 100000 + "px";
   export default {
     name: "Register",
-    mixins:[login],
-    methods:{
+    mixins: [login],
+    methods: {
       addUser() {
         if (this.password === this.repeat && this.password !== '' && this.name !== '') {
           localStorage.setItem("name", this.name),
             localStorage.setItem("password", this.password)
           this.name = ''
           this.password = ''
-          this.repeat=''
+          this.repeat = ''
           this.isReg = false
           this.$toast.show('注册成功！', 1500)
         } else {
@@ -42,7 +44,7 @@
   }
 </script>
 <!--  不能直接Import导入css,因为直接导入的CSS是全局的   -->
-<style scoped  src="../../../assets/css/login.css" ></style>
+<style scoped src="../../../assets/css/login.css"></style>
 <style scoped>
     .formSecond {
         width: 80%;

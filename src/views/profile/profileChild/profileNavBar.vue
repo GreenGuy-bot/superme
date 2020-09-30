@@ -1,4 +1,5 @@
 <template>
+    <!--  个人页面的导航栏  -->
     <nav-bar class="navBar">
         <div slot="center" class="center">会员中心</div>
         <div slot="left" class="left" @click="ifSide"></div>
@@ -8,14 +9,15 @@
 
 <script>
   import NavBar from "../../../components/common/navTab/NavBar";
+
   export default {
     name: "profileNavBar",
     components: {NavBar},
-    methods:{
-      message(){
+    methods: {
+      message() {
         this.$router.push('profileMessage')
       },
-      ifSide(){
+      ifSide() {
         this.$emit('isSideChange')
       }
     }

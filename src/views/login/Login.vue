@@ -1,4 +1,5 @@
 <template>
+<!--  登录功能  -->
     <div class="login">
         <tab-control :title="['登录','注册']" class="tabControl" @tabClick="onTabClick"></tab-control>
         <login-exhibition v-if="isReg"></login-exhibition>

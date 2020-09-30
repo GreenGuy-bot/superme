@@ -1,5 +1,5 @@
 <template>
-    <!--  二级导航栏，点击变红，并把点击对象传到外部home  -->
+    <!--  二级侧边导航栏，点击变红  -->
     <div class="tabControl">
         <div v-for="(item,index) in title" @click="active(index)" class="tab-control-item"
              :class="{ActiveRed:currentIndex === index}">
